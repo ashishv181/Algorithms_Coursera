@@ -1,0 +1,60 @@
+package week1.unionFind;
+
+public class WeightedQuickUnion extends UF {
+
+	int[] sz = new int[arr.length];
+
+	/**
+	 * Initializes the {@code array} with the size provided by the client.
+	 * 
+	 */
+	public WeightedQuickUnion(int N) {
+		super(N);
+	}
+
+	/**
+	 * Finds out the roots of the two parameters and then checks if the roots are
+	 * equal. For the elements to be connected, the roots need to be equal
+	 * 
+	 * @param two indexes {@code p} {@code q} whose link has to be checked
+	 * @return {@code true} if the two points are connected, {@code false} if not
+	 *         connected
+	 */
+	@Override
+	boolean connected(int p, int q) {
+		return root(p) == root(q);
+	}
+
+	/**
+	 * 
+	 * 
+	 */
+	@Override
+	void union(int p, int q) {
+		int rootP = root(p);
+		int rootQ = root(q);
+		if (rootP == rootQ)
+			return;
+
+		if (sz[rootP] > sz[rootQ]) {
+			arr[rootQ] = rootP;
+			sz[rootP] += sz[rootQ];
+		} else {
+			arr[rootP] = rootQ;
+			sz[rootQ] += sz[rootP];
+		}
+	}
+
+	/**
+	 * 
+	 * @param index for which the root has to be found
+	 * @return the final index which is the root of the passed parameter index
+	 */
+	private int root(int index) {
+		while (arr[index] != index) {
+			index = arr[index];
+		}
+		return index;
+	}
+
+}

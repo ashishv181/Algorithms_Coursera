@@ -1,0 +1,38 @@
+package week1.unionFind;
+
+public class QuickFind extends UF {
+	
+	/**
+	 * Initializes the {@code array} with the size provided by the client.
+	 * 
+	 */
+	public QuickFind(int N) {
+		super(N);
+	}
+
+	/**
+	 * Checks if the two points are connected or not.
+	 * 
+	 * @return
+	 * {@code true} if the two points are connected.
+	 * {@code false} if not connected
+	 */
+	@Override
+	boolean connected(int p, int q) {
+		if(arr[p] == arr[q]) {
+			return true;
+		}
+		return false;
+	}
+
+	/*
+	 * 	When union is performed, the 
+	 * 
+	 */
+	@Override
+	void union(int p, int q) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

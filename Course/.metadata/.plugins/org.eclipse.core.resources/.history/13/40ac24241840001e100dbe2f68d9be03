@@ -1,0 +1,50 @@
+package week1.unionFind;
+
+public class QuickUnion extends UF{
+	/**
+	 * Initializes the {@code array} with the size provided by the client.
+	 * 
+	 */
+	public QuickUnion(int N) {
+		super(N);
+	}
+
+	/**
+	 * Finds out the roots of the two parameters and then checks if the roots are equal.
+	 * For the elements to be connected, the roots need to be equal
+	 * 
+	 * @param two indexes {@code p} {@code q} whose link has to be checked
+	 * @return {@code true} if the two points are connected, {@code false} if not
+	 *         connected
+	 */
+	@Override
+	boolean connected(int p, int q) {
+		return root(p)== root(q);
+	}
+
+	/**
+	 * it iterates through the whole array and checks if any element is connected. i.e. has the same values as the index of {@code p}.
+	 * If the values are the same, the value of index {@code q}, is put over all these values.
+	 * It thus makes all previously connected elements have the same values as the new connected element.
+	 * 
+	 */
+	@Override
+	void union(int p, int q) {
+		
+
+	}
+
+	
+	/**
+	 * 
+	 * @param index for which the root has to be found
+	 * @return the final index which is the root of the passed paramenter index
+	 */
+	int root(int index) {
+		while(arr[index] != index) {
+			index = arr[index];
+		}
+		return index;
+	}
+
+}

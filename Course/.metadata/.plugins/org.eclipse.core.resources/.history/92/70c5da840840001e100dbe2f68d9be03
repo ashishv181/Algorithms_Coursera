@@ -1,0 +1,31 @@
+package week1.unionFind;
+
+abstract class UF {
+	int[] arr;
+
+	/**
+	 * Initializes the {@code array} with the size provided by the client.
+	 * 
+	 */
+	public UF(int N) {
+		arr = new int[N];
+		while (N > 0) {
+			arr[N - 1] = N-1;
+			N--;
+		}
+	}
+
+	abstract boolean connected(int p, int q);
+
+	abstract void union(int p, int q);
+	
+	public void printArray() {
+		for(int i = 0 ; i < arr.length; i++) {
+			System.out.print(i + " | ");
+		}
+		System.out.println();
+		for(int i = 0 ; i < arr.length; i++) {
+			System.out.print(arr[i] + " | ");
+		}
+	}
+}

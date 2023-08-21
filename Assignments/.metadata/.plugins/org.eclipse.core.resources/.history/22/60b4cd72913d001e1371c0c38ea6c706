@@ -1,0 +1,15 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
+
+public class RandomWord {
+	public static void main(String[] args) {
+		String s = null;
+		String winner = null;
+		double index = 1.0d;
+		while(!StdIn.isEmpty()) {
+			s = StdIn.read();
+			
+			
+		}
+	}
+}

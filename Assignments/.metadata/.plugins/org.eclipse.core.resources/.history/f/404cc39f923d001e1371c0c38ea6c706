@@ -1,0 +1,19 @@
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
+
+public class RandomWord {
+	public static void main(String[] args) {
+		String s = null;
+		String champion = null;
+		double index = 0.1d;
+		while(!StdIn.isEmpty()) {
+			s = StdIn.readString();
+			System.out.print(index + " - ");
+			if(StdRandom.bernoulli(index)) {
+				champion = s;
+			}
+			index += 0.1;
+		}
+		System.out.println(champion);
+	}
+}

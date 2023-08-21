@@ -1,0 +1,11 @@
+import edu.princeton.cs.algs4.StdRandom;
+
+public class RandomWord {
+	public static void main(String[] args) {
+		float x = 0.0f;
+		while(x < 1.1) {
+			x += 0.1;
+			StdRandom.bernoulli(x);
+		}
+	}
+}

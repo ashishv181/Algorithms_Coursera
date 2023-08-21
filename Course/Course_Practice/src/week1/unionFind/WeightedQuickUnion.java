@@ -1,0 +1,82 @@
+package week1.unionFind;
+
+public class WeightedQuickUnion extends UF {
+
+	private int[] sz;
+	
+	/**
+	 * Initializes the {@code array} with the size provided by the client.
+	 * 
+	 */
+	public WeightedQuickUnion(int N) {
+		super(N);
+		sz = new int[N];
+		while(N > 0) {
+			sz[N-1] = 1;
+			N--;
+		}
+	}
+
+	/**
+	 * Finds out the roots of the two parameters and then checks if the roots are
+	 * equal. For the elements to be connected, the roots need to be equal
+	 * 
+	 * @param two indexes {@code p} {@code q} whose link has to be checked
+	 * @return {@code true} if the two points are connected, {@code false} if not
+	 *         connected
+	 */
+	@Override
+	boolean connected(int p, int q) {
+		return root(p) == root(q);
+	}
+
+	/**
+	 * 
+	 * 
+	 */
+	@Override
+	void union(int p, int q) {
+		int rootP = root(p);
+		int rootQ = root(q);
+		if (rootP == rootQ)
+			return;
+
+		if (sz[rootP] > sz[rootQ]) {
+			arr[rootQ] = rootP;
+			sz[rootP] += sz[rootQ];
+		} else {
+			arr[rootP] = rootQ;
+			sz[rootQ] += sz[rootP];
+		}
+	}
+
+	/**
+	 * 
+	 * @param index for which the root has to be found
+	 * @return the final index which is the root of the passed parameter index
+	 */
+	private int root(int index) {
+		while (arr[index] != index) {
+			index = arr[index];
+		}
+		return index;
+	}
+	
+	public void printArray() {
+		for(int i = 0 ; i < arr.length; i++) {
+			System.out.print(i + " | ");
+		}
+		System.out.println();
+		for(int i = 0 ; i < arr.length; i++) {
+			System.out.print(arr[i] + " | ");
+		}
+		System.out.println();
+		
+		for(int i = 0 ; i < arr.length; i++) {
+			System.out.print(sz[i] + " | ");
+		}
+		System.out.println();
+		
+	}
+
+}

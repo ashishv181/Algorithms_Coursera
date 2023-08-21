@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+F:\Ashish_Varghese_344883\Study\Algorithms_Coursera\Assignments\.metadata\.plugins\org.eclipse.jdt.core
+2987575420.index
+1865797976.index
+3735135634.index
+2502174267.index

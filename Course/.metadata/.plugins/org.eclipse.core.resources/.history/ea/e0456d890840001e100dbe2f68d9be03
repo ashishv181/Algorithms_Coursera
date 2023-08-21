@@ -1,0 +1,25 @@
+package week1.unionFind;
+
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
+public class DynamicConnectivityClient {
+
+	public static void main(String[] args) {
+		int N = StdIn.readInt();
+		QuickFind unionFind = new QuickFind(N);
+		
+		while(!StdIn.isEmpty()) {
+			int p = StdIn.readInt();
+			int q = StdIn.readInt();
+			
+			unionFind.printArray();
+			
+			if(!unionFind.connected(p,q)) {
+				unionFind.union(p,q);
+				unionFind.printArray();
+			}
+		}
+	}
+}
+

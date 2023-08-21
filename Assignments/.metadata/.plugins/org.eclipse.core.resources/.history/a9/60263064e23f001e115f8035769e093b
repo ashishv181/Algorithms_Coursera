@@ -1,0 +1,13 @@
+import edu.princeton.cs.algs4.StdOut;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		StdOut.println("Hello, World");
+		int index = 1;
+		while(index < 10) {
+			double p = 1 / index;
+			System.out.println(p);
+		}
+		
+	}
+}

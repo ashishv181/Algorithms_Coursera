@@ -1,0 +1,18 @@
+package week1.unionFind;
+
+abstract class UF {
+	int[] arr;
+
+	
+	public UF(int N) {
+		arr = new int[N];
+		while (N > 0) {
+			arr[N - 1] = N-1;
+			N--;
+		}
+	}
+
+	abstract boolean connected(int p, int q);
+
+	abstract void union(int p, int q);
+}

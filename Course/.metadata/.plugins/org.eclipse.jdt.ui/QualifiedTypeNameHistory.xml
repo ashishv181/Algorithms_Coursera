@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdIn"/>
+    <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
+    <fullyQualifiedTypeName name="week1.unionFind.UF"/>
+    <fullyQualifiedTypeName name="week1.unionFind.QuickFind"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="week1.unionFind.QuickUnion"/>
+    <fullyQualifiedTypeName name="week1.unionFind.WeightedQuickUnion"/>
+</qualifiedTypeNameHistroy>
